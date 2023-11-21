@@ -1,0 +1,433 @@
+/* <link rel="stylesheet" href="/css?family=Tangerine"> */
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+/* Overall Page Styles */
+body {
+    /* font-family: DejaVu Sans Mono, monospace; */
+    font-family: Inconsolata, serif;
+    color: #656561;
+    background-color:#EFE9E1;
+    line-height: 1.6;
+    margin: 0 20px;
+    background: url("../images/bgImage.jpg");
+    background-size: auto 100%;
+}
+
+
+.pet, .location, .recipe{
+    margin-bottom: 60px;
+    border: 5px dashed #d1a4a1;
+    border-radius: 10px;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 30px;
+}
+
+.pet, .recipe, .location div {
+    margin-top: 10px;
+}
+
+/* pet grid layout */
+.pet .left1, .pet .right1, .pet .left2 {
+    grid-row: 1;
+}
+.pet .left3{
+    grid-row: 2;
+    grid-column: 1/span3;
+}
+
+/* recipe grid layout */
+.recipe .left1,.recipe .left2,.recipe .right1 {
+    grid-row: 1;
+    grid-column: 1;
+}
+.recipe .left3 {
+    grid-row: 1;
+    grid-column: 2;
+}
+.recipe .right1 {
+    grid-row: 1;
+    grid-column: 3;
+}
+.recipe .left2 {
+    grid-row: 2;
+    grid-column: 3;
+}
+.recipe .left4 {
+    grid-row: 2;
+    grid-column: 1/span2;
+}
+.location {
+    margin-top: 10px;
+}
+
+/* Header Styles */
+h1 {
+    font-size: 36px; 
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    color: #E02C1F;
+    text-align: center;
+    margin: 30px;
+}
+
+header {
+    background: url("../images/logo_cat.png");
+    background-size: auto 100%;
+    /* height: 50px; */
+    background-repeat:no-repeat;
+    animation: moveBg 40s linear infinite;
+    animation-play-state: running;
+}
+
+
+
+@keyframes moveBg {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    header { 
+        animation: none; 
+        background-position: 100% 0;
+    }
+  }
+
+/* Sub-Header Styles */
+h2, h3{
+    font-size: 24px; 
+    font-family: Comic Sans MS, Comic Sans, cursive; 
+    color: #E02C1F; 
+}
+
+
+/* Paragraph Styles */
+p, span {
+    line-height: 2;
+    margin-left: 30px;
+}
+
+/* Image Styles */
+img {
+    border: 5px solid #656561; 
+    padding: 10px;
+    margin: 0px;
+    width: 200px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+/* navigation bar */
+nav {
+    border: 1px solid #656561;
+    
+    /* margin: auto; */
+    width: 98%;
+    border-radius: 20px	;	
+    margin: 20px 0px;
+
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    justify-items: center;
+}
+
+nav li{
+    padding: 5px 0px;
+}
+
+
+nav a {
+    /* background-color: white; */
+    padding: 2px;
+    margin: 20px;
+}
+
+
+/* button style */
+#curpage{
+    background: #E02C1F;
+    border-radius: 3px;	
+    color: white;
+    font-style: italic;
+}
+
+.btn {
+    border-radius: 3px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    color: #656561;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #EFE9E1;
+    text-decoration: none;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+#main li {
+    margin-left: 50px;
+}
+
+#skip {
+    position: absolute;
+    left: -500px;
+    text-transform: uppercase;
+}
+
+#skip:focus{
+    left:20px;
+    top: 50px;
+}
+
+*:focus,
+figure.snip1206:focus {
+    border: 3px dashed #E02C1F;
+    border-radius: 10px;
+}
+
+span {
+    display: block;
+}
+
+#main ul {
+    list-style:square;
+}
+
+ol {
+    list-style:decimal;
+}
+
+/* unique component */
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+figure.snip1206 {
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+  max-width: 400px;
+  height: fit-content;
+  color: #000000;
+  text-align: center;
+  margin-top:30px;
+
+}
+figure.snip1206.sub{
+    min-width: none;
+    max-width: 200px;
+    display: inline-block;
+  }
+figure.snip1206 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+figure.snip1206 img {
+  opacity: 1;
+  width: 100%;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+figure.snip1206:after {
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  opacity: 0.85;
+  -webkit-transform: skew(-45deg) scaleX(0);
+  transform: skew(-45deg) scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+figure.snip1206 figcaption {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+figure.snip1206 p {
+  margin: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+figure.snip1206 p {
+  padding: 0 50px;
+  font-size: 0.8em;
+  font-weight: 500;
+  font-style: bold;
+}
+
+figure.snip1206:focus:after,
+figure.snip1206:hover:after,
+figure.snip1206.hover:after {
+  -webkit-transform: skew(-45deg) scaleX(1);
+  transform: skew(-45deg) scaleX(1);
+  transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+figure.snip1206:focus figcaption p,
+figure.snip1206:hover figcaption p,
+figure.snip1206.hover figcaption p {
+  -webkit-transform: translate3d(0%, 0%, 0);
+  transform: translate3d(0%, 0%, 0);
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+figure.snip1206:focus figcaption p,
+figure.snip1206:hover figcaption p,
+figure.snip1206.hover figcaption p {
+  opacity: 0.7;
+}
+
+figure.snip1206:focus figcaption p {
+    -webkit-transform: translate3d(0%, 0%, 0);
+    transform: translate3d(0%, 0%, 0);
+    opacity: 0.7;
+  }
+
+
+/* gif reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .gif-animation {
+        display: none; /* Hide GIFs when reduced motion is preferred */
+    }
+}
+
+/* mobile view */
+@media (max-width: 480px) {
+    body {
+        font-size: 1.15em;
+    }
+    nav {
+        margin: 20px auto;
+    }
+
+    .pet, .location, .recipe{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+    
+}
+
+/* tablet view */
+@media (min-width:481px) and (max-width: 1024px) {
+
+    nav {
+        margin: 20px auto;
+    }
+    .pet, .location, .recipe{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+    }
+    .left1, .left2, .left3 {
+        grid-column: 1/1;
+    }
+    .right1 {
+        padding-top: 50px;
+    }
+    .rigth1, .right2 {
+        grid-column: 2/2;
+    }
+    .left1, .right1 {
+        grid-row: 1;
+    }
+    .left2 {
+        grid-row: 2;
+    }
+    .left3 {
+        grid-column: 1/span 2;
+        grid-row: 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .left4 {
+        grid-row: 4;
+        grid-column: 1/span 2;
+    }
+
+    .left_photo {
+        grid-column: 1/1;
+    }
+    .right_photo {
+        grid-column: 2/2;
+    }
+
+    /* dropdown */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #EFE9E1;
+        min-width: 150px;
+        box-shadow: 0px 8px 16px 0px #d1a4a1;
+        z-index: 1;
+        border-radius: 25px;
+    }
+
+    .dropdown-content a {
+        color: #656561;
+        /* padding: 12px 16px; */
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #E02C1F;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .btn {
+        background-color: #b28d8a;
+    }
+
+    .dropdown:focus-within .dropdown-content {
+        display: block;
+    }
+
+    figure.snip1206.sub{
+        min-width: none;
+        max-width: 200px;
+        display: block;
+      }
+    
+    .left4 figure.snip1206.sub {
+        display: inline-block;
+    }
+
+    /*  */
+    
+}
+
+
